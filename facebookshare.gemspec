@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.version     = Facebookshare::VERSION
   s.authors     = ["Olegborodko"]
   s.email       = ["borodkoleg@gmail.com"]
-  s.homepage    = "borodkoleg@gmail.com"
+  s.homepage    = "https://olegborodko.github.io/index_en.html"
   s.summary     = "Facebook share with callback"
   s.description = "Facebook share with callback"
   s.license     = "MIT"
