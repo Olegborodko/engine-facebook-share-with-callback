@@ -11,7 +11,7 @@ module Facebookshare
                        image_height=nil,
                        image_type=nil)
       result = ""
-      result << "<a id='#{id}' data-result='nil' class='facebook_d_style_45654321'><img src='assets/facebookshare/button-fb.png'></a>"
+      result << "<a id='#{id}' data-result='nil' class='facebook_d_style_45654321'><img src='#{image_path('facebookshare/button-fb.png')}'></a>"
       result << "<script>$('##{id}').facebook_share({app_id: '#{app_id}',
                 callback: '#{callback}', url: '#{url}',title: '#{title}',
                 description: '#{description}',image: '#{image}',image_width: '#{image_width}',
