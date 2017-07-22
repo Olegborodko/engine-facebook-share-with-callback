@@ -8,12 +8,16 @@
 
       if (option){ $.extend(setting,option);}
 
-      callFB(setting.app_id);
+      if (setting.app_id) {
+        callFB(setting.app_id);
+      }
 
       $(this).click(function () {
-        facebook_dialog(setting.callback,
-          setting.url, setting.title, setting.description, setting.image,
-          setting.image_width, setting.image_height, setting.image_type);
+        if (setting.app_id) {
+          facebook_dialog(setting.callback,
+            setting.url, setting.title, setting.description, setting.image,
+            setting.image_width, setting.image_height, setting.image_type);
+        }
       });
 
     };
@@ -22,32 +26,34 @@
   };
 
   function facebook_dialog(callback, url, title, description, image, image_width, image_height, image_type){
+    parameters = {};
+    parameters["object"] = {};
+    if (url) { j["object"]["og:url"] = url; }
+    if (title) { j["object"]["og:url"] = title; }
+    if (description) { j["object"]["og:url"] = description; }
+    if (image) { j["object"]["og:url"] = image; }
+    if (image_width) { j["object"]["og:url"] = image_width; }
+    if (image_height) { j["object"]["og:url"] = image_height; }
+    if (image_type) { j["object"]["og:url"] = image_type; }
+
     FB.ui({
         method: 'share_open_graph',
         action_type: 'og.shares',
-        action_properties: JSON.stringify({
-          object : {
-            'og:url': url,
-            'og:title': title,
-            'og:description': description,
-            'og:image': image,
-            'og:image:width': image_width,
-            'og:image:height': image_height,
-            'og:image:type': image_type
-          }
-        })
+        action_properties: JSON.stringify(parameters)
       },
 // callback
       function(response) {
         if (response && !response.error_message) {
 // then get post content
-          $.ajax({
-            type: "POST",
-            url: callback,
-            success: function(){
-              console.log('success')
-            }
-          });
+          if (callback) {
+            $.ajax({
+              type: "POST",
+              url: callback,
+              success: function () {
+                console.log('success')
+              }
+            });
+          }
         } else {
           console.log('don\'t success')
         }
