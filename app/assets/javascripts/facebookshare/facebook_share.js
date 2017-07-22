@@ -29,12 +29,12 @@
     parameters = {};
     parameters["object"] = {};
     if (url) { parameters["object"]["og:url"] = url; }
-    if (title) { parametersj["object"]["og:url"] = title; }
-    if (description) { parameters["object"]["og:url"] = description; }
-    if (image) { parameters["object"]["og:url"] = image; }
-    if (image_width) { parameters["object"]["og:url"] = image_width; }
-    if (image_height) { parameters["object"]["og:url"] = image_height; }
-    if (image_type) { parameters["object"]["og:url"] = image_type; }
+    if (title) { parameters["object"]["og:title"] = title; }
+    if (description) { parameters["object"]["og:description"] = description; }
+    if (image) { parameters["object"]["og:image"] = image; }
+    if (image_width) { parameters["object"]["og:image:width"] = image_width; }
+    if (image_height) { parameters["object"]["og:image:height"] = image_height; }
+    if (image_type) { parameters["object"]["og:image:type"] = image_type; }
 
     FB.ui({
         method: 'share_open_graph',
