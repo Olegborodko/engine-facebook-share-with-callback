@@ -4,7 +4,7 @@
 
 ### gemfile
 ```ruby
-gem 'facebookshare', '0.0.0.2', git: 'git@github.com:Olegborodko/engine-facebook-share-with-callback.git'
+gem 'facebookshare', git: 'git@github.com:Olegborodko/engine-facebook-share-with-callback.git'
 ```
 
 ### application.js

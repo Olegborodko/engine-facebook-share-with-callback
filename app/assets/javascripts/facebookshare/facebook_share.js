@@ -28,13 +28,13 @@
   function facebook_dialog(callback, url, title, description, image, image_width, image_height, image_type){
     parameters = {};
     parameters["object"] = {};
-    if (url) { j["object"]["og:url"] = url; }
-    if (title) { j["object"]["og:url"] = title; }
-    if (description) { j["object"]["og:url"] = description; }
-    if (image) { j["object"]["og:url"] = image; }
-    if (image_width) { j["object"]["og:url"] = image_width; }
-    if (image_height) { j["object"]["og:url"] = image_height; }
-    if (image_type) { j["object"]["og:url"] = image_type; }
+    if (url) { parameters["object"]["og:url"] = url; }
+    if (title) { parametersj["object"]["og:url"] = title; }
+    if (description) { parameters["object"]["og:url"] = description; }
+    if (image) { parameters["object"]["og:url"] = image; }
+    if (image_width) { parameters["object"]["og:url"] = image_width; }
+    if (image_height) { parameters["object"]["og:url"] = image_height; }
+    if (image_type) { parameters["object"]["og:url"] = image_type; }
 
     FB.ui({
         method: 'share_open_graph',
